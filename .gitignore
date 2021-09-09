@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.Trash
+
+code/checkpoints/
+code/data/
+code/models/
+

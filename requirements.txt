@@ -1,0 +1,7 @@
+pandas
+matplotlib
+seaborn
+dill
+torchvision==0.2.2
+cox
+jupyter
