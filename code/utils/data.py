@@ -165,7 +165,8 @@ def get_transforms(dataset, augmentation=True):
                      ])
         else:
             train_transform = transforms.Compose(
-                    [transforms.ToTensor(),
+                    [transforms.Lambda(lambda x: tfunc.to_pil_image(x)),
+                     transforms.ToTensor(),
                      transforms.Normalize(mean, std)
                     ])
 

@@ -1,5 +1,4 @@
 # Include paths
-source ../config/config.py
 source ./config/config.py
 
 if [ ! -f $CHECKPOINT_PATH ]; then

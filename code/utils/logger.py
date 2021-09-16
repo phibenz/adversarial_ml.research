@@ -1,4 +1,5 @@
 import os
+import csv
 import logging
 import torch
 import numpy as np
@@ -22,6 +23,14 @@ def get_logger(log_path, filename="log.txt"):
     logger.addHandler(sh)
     logger.addHandler(fh)
     return logger
+
+
+def get_stats_recorder(path, header=['epoch', 'train_acc1', 'train_acc5', 'train_loss', 'val_acc1', 'val_acc5', 'val_loss']):
+    stat_log = os.path.join(path, 'stats.csv')
+    stat_csvfile = open(stat_log, 'w')
+    stat_csvwriter = csv.writer(stat_csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    stat_csvwriter.writerow(header)
+    return stat_csvwriter, stat_csvfile
 
 
 class AverageMeter(object):

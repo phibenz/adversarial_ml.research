@@ -52,3 +52,21 @@ Note the following:
 | 4/255  | 0.04  | 33.57 | 33.06 |
 | 8/255  | 0.02  | 13.15 | 19.64 |
 | 16/255 | 0.01  | 1.53  | 4.99  |
+
+
+## Evaluate the provided datasets
+### Download the provided datasets 
+Download the provided datasets with `bash ./reproduce_features_not_bugs/download_datasets.sh`.
+
+### Train ResNet50 on the provided datasets
+Run `bash ./reproduce_features_not_bugs/train_datasets_fnb.sh`.
+
+### Evaluate the trained ResNet50 models
+Run `bash ./reproduce_features_not_bugs/eval_datasets_fnb.sh`. The following results were obtained with the above scripts, which are comparable to Table 7 and Table 1 of the original paper.
+
+| Dataset            | 0     | 0.25  | 0.5   |
+|--------------------|-------|-------|-------|
+| Non-robust dataset | 86.28 | 0.03  | 0.0   |
+| Robust dataset     | 84.55 | 46.54 | 16.62 |
+| D rand             | 64.13 | 0.00  | 0.00  |
+| D det              | 43.54 | 0.00  | 0.00  |
