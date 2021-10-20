@@ -1,1 +1,1 @@
-docker build -t phibenz/research-collections .
+docker build -t phibenz/adversarial_ml.research .

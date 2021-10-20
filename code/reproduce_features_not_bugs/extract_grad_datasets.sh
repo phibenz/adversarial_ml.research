@@ -2,7 +2,7 @@
 python3 extract_grad_datasets.py \
     --dataset cifar10 \
     --arch resnet50_bn_cifar \
-    --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
+    --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
     --background-dataset cifar10 \
     --num-train-samples 50000 \
     --num-test-samples 10000 \
@@ -20,7 +20,7 @@ python3 extract_grad_datasets.py \
 python3 extract_grad_datasets.py \
     --dataset cifar10 \
     --arch resnet50_bn_cifar \
-    --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075509_644_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_5 \
+    --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075509_644_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_5 \
     --background-dataset cifar10 \
     --num-train-samples 50000 \
     --num-test-samples 10000 \
@@ -38,7 +38,7 @@ python3 extract_grad_datasets.py \
 python3 extract_grad_datasets.py \
     --dataset cifar10 \
     --arch resnet50_bn_cifar \
-    --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
+    --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
     --background-dataset cifar10 \
     --num-train-samples 50000 \
     --num-test-samples 10000 \
@@ -56,7 +56,7 @@ python3 extract_grad_datasets.py \
 python3 extract_grad_datasets.py \
     --dataset cifar10 \
     --arch resnet50_bn_cifar \
-    --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
+    --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
     --background-dataset cifar10 \
     --num-train-samples 50000 \
     --num-test-samples 10000 \

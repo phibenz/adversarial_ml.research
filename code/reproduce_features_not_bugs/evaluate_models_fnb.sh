@@ -3,7 +3,7 @@ python3 evaluate_model.py \
         --dataset cifar10 \
         --arch resnet50_bn_cifar \
         --evaluation-dataset cifar10 \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
         --batch-size 128
 
 PGD_EPSILON="0.25 0.5 1.0 2.0"
@@ -13,7 +13,7 @@ for eps in $PGD_EPSILON; do
           --dataset cifar10 \
           --arch resnet50_bn_cifar \
           --evaluation-dataset cifar10 \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
           --batch-size 128 \
           --attack-name pgd_l2 \
           --attack-criterion NegXent \
@@ -31,7 +31,7 @@ for eps in $PGD_EPSILON; do
         --dataset cifar10 \
         --arch resnet50_bn_cifar \
         --evaluation-dataset cifar10 \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075452_407_cifar10_resnet50_bn_cifar_1337_nat \
         --batch-size 128 \
         --attack-name pgd_linf \
         --attack-criterion NegXent \
@@ -46,7 +46,7 @@ python3 evaluate_model.py \
         --dataset cifar10 \
         --arch resnet50_bn_cifar \
         --evaluation-dataset cifar10 \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075501_166_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_25 \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075501_166_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_25 \
         --batch-size 128
 
 PGD_EPSILON="0.25 0.5 1.0 2.0"
@@ -56,7 +56,7 @@ for eps in $PGD_EPSILON; do
           --dataset cifar10 \
           --arch resnet50_bn_cifar \
           --evaluation-dataset cifar10 \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075501_166_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_25 \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075501_166_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_25 \
           --batch-size 128 \
           --attack-name pgd_l2 \
           --attack-criterion NegXent \
@@ -71,7 +71,7 @@ python3 evaluate_model.py \
         --dataset cifar10 \
         --arch resnet50_bn_cifar \
         --evaluation-dataset cifar10 \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075509_644_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_5 \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075509_644_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_5 \
         --batch-size 128
 
 PGD_EPSILON="0.25 0.5 1.0 2.0"
@@ -81,7 +81,7 @@ for eps in $PGD_EPSILON; do
           --dataset cifar10 \
           --arch resnet50_bn_cifar \
           --evaluation-dataset cifar10 \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075509_644_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_5 \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075509_644_cifar10_resnet50_bn_cifar_1337_adv_train_l2_0_5 \
           --batch-size 128 \
           --attack-name pgd_l2 \
           --attack-criterion NegXent \
@@ -96,7 +96,7 @@ python3 evaluate_model.py \
         --dataset cifar10 \
         --arch resnet50_bn_cifar \
         --evaluation-dataset cifar10 \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075518_497_cifar10_resnet50_bn_cifar_1337_adv_train_l2_1_0 \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075518_497_cifar10_resnet50_bn_cifar_1337_adv_train_l2_1_0 \
         --batch-size 128
 
 PGD_EPSILON="0.25 0.5 1.0 2.0"
@@ -106,7 +106,7 @@ for eps in $PGD_EPSILON; do
           --dataset cifar10 \
           --arch resnet50_bn_cifar \
           --evaluation-dataset cifar10 \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075518_497_cifar10_resnet50_bn_cifar_1337_adv_train_l2_1_0 \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075518_497_cifar10_resnet50_bn_cifar_1337_adv_train_l2_1_0 \
           --batch-size 128 \
           --attack-name pgd_l2 \
           --attack-criterion NegXent \
@@ -121,7 +121,7 @@ python3 evaluate_model.py \
         --dataset cifar10 \
         --arch resnet50_bn_cifar \
         --evaluation-dataset cifar10 \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075529_035_cifar10_resnet50_bn_cifar_1337_adv_train_linf_8 \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075529_035_cifar10_resnet50_bn_cifar_1337_adv_train_linf_8 \
         --batch-size 128
 
 PGD_EPSILON="8/255 16/255"
@@ -132,7 +132,7 @@ for eps in $PGD_EPSILON; do
           --dataset cifar10 \
           --arch resnet50_bn_cifar \
           --evaluation-dataset cifar10 \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075529_035_cifar10_resnet50_bn_cifar_1337_adv_train_linf_8 \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075529_035_cifar10_resnet50_bn_cifar_1337_adv_train_linf_8 \
           --batch-size 128 \
           --attack-name pgd_linf \
           --attack-criterion NegXent \
@@ -187,7 +187,7 @@ python3 evaluate_model.py \
         --dataset imagenet \
         --arch resnet50 \
         --evaluation-dataset imagenet \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075536_549_imagenet_resnet50_1337_adv_train_l2_3_0 \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075536_549_imagenet_resnet50_1337_adv_train_l2_3_0 \
         --batch-size 32
 
 PGD_EPSILON="0.5 1.0 2.0 3.0"
@@ -197,7 +197,7 @@ for eps in $PGD_EPSILON; do
           --dataset imagenet \
           --arch resnet50 \
           --evaluation-dataset imagenet \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075536_549_imagenet_resnet50_1337_adv_train_l2_3_0 \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075536_549_imagenet_resnet50_1337_adv_train_l2_3_0 \
           --batch-size 32 \
           --attack-name pgd_l2 \
           --attack-criterion NegXent \
@@ -213,7 +213,7 @@ python3 evaluate_model.py \
         --dataset imagenet \
         --arch resnet50 \
         --evaluation-dataset imagenet \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075545_753_imagenet_resnet50_1337_adv_train_linf_4 \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075545_753_imagenet_resnet50_1337_adv_train_linf_4 \
         --batch-size 32
 
 
@@ -225,7 +225,7 @@ for eps in $PGD_EPSILON; do
           --dataset imagenet \
           --arch resnet50 \
           --evaluation-dataset imagenet \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075545_753_imagenet_resnet50_1337_adv_train_linf_4 \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075545_753_imagenet_resnet50_1337_adv_train_linf_4 \
           --batch-size 32 \
           --attack-name pgd_linf \
           --attack-criterion NegXent \
@@ -240,7 +240,7 @@ python3 evaluate_model.py \
         --dataset imagenet \
         --arch resnet50 \
         --evaluation-dataset imagenet \
-        --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075558_187_imagenet_resnet50_1337_adv_train_linf_8 \
+        --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075558_187_imagenet_resnet50_1337_adv_train_linf_8 \
         --batch-size 32
 
 
@@ -252,7 +252,7 @@ for eps in $PGD_EPSILON; do
           --dataset imagenet \
           --arch resnet50 \
           --evaluation-dataset imagenet \
-          --model-path /workspace/Projects/research-collections/code/models/fnb/20210906_075558_187_imagenet_resnet50_1337_adv_train_linf_8 \
+          --model-path /workspace/Projects/adversarial_ml.research/code/models/fnb/20210906_075558_187_imagenet_resnet50_1337_adv_train_linf_8 \
           --batch-size 32 \
           --attack-name pgd_linf \
           --attack-criterion NegXent \
