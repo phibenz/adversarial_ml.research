@@ -1,24 +1,40 @@
+import torch
 from torch.nn.modules.loss import _WeightedLoss
-from torch.nn.functional import log_softmax, softmax, cross_entropy
+from torch.nn.functional import cross_entropy
 
 
 class Xent(_WeightedLoss):
     def __init__(self):
         super(Xent, self).__init__(weight=None, size_average=None, reduce=None, reduction='none')
-    
+        self.latent_loss = False
+
     def forward(self, pred, target):
+        if len(target.shape) == 1:
+            pass
+        elif len(target.shape) == 2:
+            target = torch.argmax(target, dim=-1)
+        else:
+            raise ValueError
         return cross_entropy(pred, target)
 
 class NegXent(_WeightedLoss):
     def __init__(self):
         super(NegXent, self).__init__(weight=None, size_average=None, reduce=None, reduction='none')
-    
+        self.latent_loss = False
+
     def forward(self, pred, target):
+        if len(target.shape) == 1:
+            pass
+        elif len(target.shape) == 2:
+            target = torch.argmax(target, dim=-1)
+        else:
+            raise ValueError
         return -cross_entropy(pred, target)
 
 class LogitL2(_WeightedLoss):
     def __init__(self):
         super(LogitL2, self).__init__(weight=None, size_average=None, reduce=None, reduction='none')
+        self.latent_loss = False
 
     def forward(self, pred_logit, target_logit):
         logit_gap = target_logit - pred_logit
@@ -26,28 +42,37 @@ class LogitL2(_WeightedLoss):
         loss = torch.mean(logit_l2)
         return loss
         
-
 # def neg_log_xent(pred, target):
 #     target = torch.argmax(target, dim=-1)
 #     loss = -cross_entropy(pred, target)
 #     return loss
 
-# def logit_xent(pred, target):
-#     target = torch.argmax(target, dim=-1)
-#     loss = cross_entropy(pred, target)
-#     return loss
-    
-# def latent_l2(pred, target):
-#     # loss = torch.div(torch.norm(target - pred, dim=1), torch.norm(pred, dim=1))
-#     loss = torch.norm(target - pred, p=2, dim=1)
-#     loss = torch.mean(loss)
-#     return loss
+class LogitXent(_WeightedLoss):
+    def __init__(self):
+        super(LogitXent, self).__init__(weight=None, size_average=None, reduce=None, reduction='none')
+        self.latent_loss = False
 
-# TODO: Kwards inputs
+    def forward(self, pred, target):
+        target = torch.argmax(target, dim=-1)
+        loss = cross_entropy(pred, target)
+        return loss
+    
+class LatentL2(_WeightedLoss):
+    def __init__(self):
+        super(LatentL2, self).__init__(weight=None, size_average=None, reduce=None, reduction='none')
+        self.latent_loss = True
+
+    def forward(self, pred, target):
+        loss = torch.norm(target - pred, p=2, dim=1)
+        loss = torch.mean(loss)
+        return loss
+
+# TODO: Kwargs inputs
 class CW(_WeightedLoss):
     def __init__(self, num_classes, confidence=0.0, cuda=False):
         super(CW, self).__init__(weight=None, size_average=None, reduce=None, reduction='none')
-
+        
+        self.latent_loss = False
         self.confidence = confidence
         self.num_classes = num_classes
         self.cuda = cuda

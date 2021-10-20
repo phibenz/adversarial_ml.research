@@ -41,7 +41,7 @@ def parse_arguments():
     parser.add_argument("--pgd-iterations", type=int, help="PGD: Iterations")
     parser.add_argument("--pgd-random-start", type=eval, default="False", choices=[True, False], help="PGD: Random start")
     # Path 
-    parser.add_argument("--postfix", type=str, default="", help="Postfix to attach to filename")
+    parser.add_argument("--postfix", type=str, default="", help="Postfix to append to filename")
 
     args = parser.parse_args()
     args.use_cuda = torch.cuda.is_available()

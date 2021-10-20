@@ -24,6 +24,7 @@ def parse_arguments():
     parser.add_argument("--seed", type=int, default=1337, help="Seed used")
     parser.add_argument("--criterion", default="Xent", help="Training criterion")
     parser.add_argument("--augmentation", type=eval, default="True", choices=[True, False], help="Determines if data augmentation is used")
+    parser.add_argument("--grad-imgs-path", type=str, default=None, help="Path to the gradient images")
     # Adversarial Training parameters
     parser.add_argument("--adversarial-training", type=eval, default="False", choices=[True, False], help="Train adversarially")
     parser.add_argument("--attack-criterion", default=None, help="Criterion used by attack")
@@ -100,7 +101,8 @@ def main():
     
     data_train, data_test = get_data(args.dataset,
                                     train_transform=train_transform,
-                                    test_transform=test_transform)
+                                    test_transform=test_transform,
+                                    grad_imgs_path=args.grad_imgs_path)
 
     train_loader = torch.utils.data.DataLoader(data_train,
                                                 batch_size=args.batch_size,
@@ -223,7 +225,7 @@ def main():
                     'Error@1 {error:.3f}'.format(
                     top1=top1, top5=top5, error=100-top1.avg))
 
-        logger.info("+++ Validation on pretrained test dataset +++")
+        logger.info("+++ Validation on test dataset +++")
         val_acc1, val_acc5, val_loss = validate(val_loader=test_loader, 
                                                 model=net, 
                                                 criterion=criterion, 

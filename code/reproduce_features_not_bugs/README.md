@@ -70,3 +70,20 @@ Run `bash ./reproduce_features_not_bugs/eval_datasets_fnb.sh`. The following res
 | Robust dataset     | 84.55 | 46.54 | 16.62 |
 | D rand             | 64.13 | 0.00  | 0.00  |
 | D det              | 43.54 | 0.00  | 0.00  |
+
+## Reproduce the extraction of datasets 
+### Extract the datasets
+Run `bash ./reproduce_features_not_bugs/extract_grad_datasets.sh`. The respective gradient images are stored in the folder of the model, they were extracted from. 
+
+### Train ResNet50 on the extracted datasets
+Run `bash ./reproduce_features_not_bugs/train_grad_datasets.sh`.
+
+### Evaluate the trained ResNet50 models
+Run `bash ./reproduce_features_not_bugs/evaluate_models_grad_imgs.sh`. The following obtained results are comparable to the above Table. 
+
+| Dataset            | 0     | 0.25  | 0.5   |
+|--------------------|-------|-------|-------|
+| Non-robust dataset | 84.38 | 0.02  | 0.0   |
+| Robust dataset     | 86.79 | 49.93 | 19.22 |
+| D rand             | 67.75 | 0.00  | 0.00  |
+| D det              | 42.03 | 0.00  | 0.00  |

@@ -257,7 +257,7 @@ def get_transforms(dataset, augmentation=True):
     return train_transform, test_transform
     
 
-def get_data(dataset, train_transform, test_transform, severity=1):
+def get_data(dataset, train_transform, test_transform, severity=1, grad_imgs_path=None):
     if dataset == 'mnist':
         train_data = torchvision.datasets.MNIST(DATA_PATH, train=True, transform=train_transform, download=True)
         test_data = torchvision.datasets.MNIST(DATA_PATH, train=False, transform=test_transform, download=True)
@@ -299,6 +299,22 @@ def get_data(dataset, train_transform, test_transform, severity=1):
         train_labels = torch.tensor(np.load(os.path.join(DATA_PATH, 'CIFAR-10-C', 'labels.npy')))
         train_data = DatasetFromTorchTensor(train_imgs, train_labels, transform=train_transform)
         test_data = DatasetFromTorchTensor(train_imgs, train_labels, transform=test_transform)
+    elif dataset == 'grad_imgs_cifar10':
+        x_train_path = os.path.join(grad_imgs_path, "x_train.pt")
+        y_train_path = os.path.join(grad_imgs_path, "y_train.pt")
+
+        x_test_path = os.path.join(grad_imgs_path, "x_test.pt")
+        y_test_path = os.path.join(grad_imgs_path, "y_test.pt")
+
+        x_train = torch.load(x_train_path)
+        y_train = torch.load(y_train_path)
+        
+        x_test = torch.load(x_test_path)
+        y_test = torch.load(y_test_path)
+
+        train_data = DatasetFromTorchTensor(x_train, y_train, transform=train_transform)
+        test_data = DatasetFromTorchTensor(x_test, y_test, transform=test_transform)
+    
     else:
         raise ValueError('Unknwon dataset: {}'.format(dataset))
     return train_data, test_data
