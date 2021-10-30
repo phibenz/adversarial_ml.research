@@ -104,17 +104,10 @@ def main():
     logger.info("Background train transform: {}".format(background_train_transform))
     logger.info("Background test transform: {}".format(background_test_transform))
 
-    # TODO: Generate a dataset with a grad img dataset as the background
-    # if args.background_dataset.startswith("grad_imgs"):
-    #     background_grad_imgs_path = os.path.join(GRAD_IMGS_PATH, args.background_grad_imgs_path)
-    #     background_data_train, background_data_test = get_grad_img_data(grad_imgs_path=background_grad_imgs_path,
-    #                                                                 train_transform=background_train_transform,
-    #                                                                 test_transform=background_test_transform,
-    #                                                                 number_of_imgs=-1)
-    # else:
     background_data_train, background_data_test = get_data(args.background_dataset,
                                                                 train_transform=background_train_transform,
-                                                                test_transform=background_test_transform)
+                                                                test_transform=background_test_transform,
+                                                                grad_imgs_path=args.background_grad_imgs_path)
     
     background_data_train_loader = torch.utils.data.DataLoader(background_data_train,
                                                             batch_size=args.batch_size,

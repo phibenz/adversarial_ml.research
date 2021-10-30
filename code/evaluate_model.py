@@ -13,8 +13,6 @@ from utils.attack import get_attack
 
 from config.config import MODEL_PATH
 
-# from attacks.pgd import PGD_Attack_L2, PGD_Attack_Linf
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Evaluates a neural network")
